@@ -5,6 +5,7 @@ import Panel from "./Panel";
 class Skills extends Panel {
     icon = "fa-compass";
     title = "Skills";
+    prefix = "Skl";
 
     skillBar(level) {
         let val;
@@ -47,7 +48,7 @@ class Skills extends Panel {
 
     itemMethod(item, key){
         return(
-            <div className="card-body card-text" key={"Skl" + key}>
+            <div className="card-body card-text" key={key}>
                 <h5 className="row">
                     <div className="col-md">
                         {item.name}
@@ -57,7 +58,7 @@ class Skills extends Panel {
                     </div>
                 </h5>
                 {this.skillBar(item.level)}
-                {this.labelArray(item.keywords, "Skl" + key)}
+                {this.labelArray(item.keywords, key)}
             </div>
         )
     }

@@ -1,28 +1,14 @@
-import React from "react";
-import {dateString, arrayToList} from "./Utilities"
-import Panel from "./Panel";
+import Work from "./Work";
 
-class Volunteer extends Panel {
+class Volunteer extends Work {
     icon = "fa-handshake-o";
     title = "Volunteering";
+    prefix = "Vol";
 
     itemMethod(item, key){
+        item.company = item.organization
         return(
-            <div className="card-body card-text" key={"Vol" + key}>
-                <h5 className="row">
-                    <div className="col-md">
-                        {item.position}
-                    </div>
-                    <div className="col-md text-md-center">
-                        <a className="float" href={item.website}>{item.organization}</a>
-                    </div>
-                    <div className="col-md text-md-right text-muted">
-                        ({dateString(item.startDate)} - {dateString(item.endDate)})
-                    </div>
-                </h5>
-                {item.summary}
-                {arrayToList(item.highlights, "Vol" + key)}
-            </div>
+            super.itemMethod(item, key)
         )
     }
 }

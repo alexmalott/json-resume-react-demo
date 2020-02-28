@@ -3,6 +3,7 @@ import React, {Component} from "react";
 class Panel extends Component {
     icon = "fa-question-circle";
     title = "Panel";
+    prefix = "Pan";
     constructor(props){
         super(props);
         this.populate = this.populate.bind(this);
@@ -19,7 +20,7 @@ class Panel extends Component {
             if( i > 0 ){
                 content.push( <hr/> )
             }
-            content.push( this.itemMethod( this.props.items[i], i ) )
+            content.push( this.itemMethod( this.props.items[i], this.prefix + i ) )
         }
 
         return (

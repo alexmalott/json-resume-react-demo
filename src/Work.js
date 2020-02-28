@@ -5,10 +5,11 @@ import Panel from "./Panel";
 class Work extends Panel {
     icon = "fa-briefcase";
     title = "Experience";
+    prefix = "Job";
 
     itemMethod(item, key){
         return(
-            <div className="card-body card-text" key={"Job" + key}>
+            <div className="card-body card-text" key={key}>
                 <h5 className="row">
                     <div className="col-md">
                         {item.position}
@@ -21,7 +22,7 @@ class Work extends Panel {
                     </div>
                 </h5>
                 {item.summary}
-                {arrayToList(item.highlights, "Job" + key)}
+                {arrayToList(item.highlights, key)}
             </div>
         )
     }

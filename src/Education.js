@@ -5,10 +5,12 @@ import Panel from "./Panel";
 class Education extends Panel {
     icon = "fa-graduation-cap";
     title = "Education";
+    prefix = "Edu";
 
     itemMethod(item, key){
+        key = this.prefix + key;
         return(
-            <div className="card-body card-text" key={"Edu" + key}>
+            <div className="card-body card-text" key={key}>
                 <h5 className="row">
                     <div className="col-md">
                         {item.institution}
@@ -20,7 +22,7 @@ class Education extends Panel {
                         ({dateString(item.startDate)} - {dateString(item.endDate)})
                     </div>
                 </h5>
-                {arrayToList(item.courses, "Edu" + key)}
+                {arrayToList(item.courses, key)}
             </div>
         )
     }
