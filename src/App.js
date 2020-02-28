@@ -4,8 +4,13 @@ import Basics from './Basics'
 import Work from './Work'
 import Education from './Education'
 import Skills from './Skills'
+import Volunteer from './Volunteer'
 
 class App extends Component {
+    componentDidMount(){
+        document.title = Resume.basics.name
+    }
+
     render() {
         return (
             <div className="container-fluid">
@@ -19,6 +24,9 @@ class App extends Component {
                     </div>
                     <div className="col-12 col-xl-6">
                         <Education items={Resume.education}/>
+                    </div>
+                    <div className="col-12 col-xl-6">
+                        <Volunteer items={Resume.volunteer}/>
                     </div>
                 </div>
             </div>

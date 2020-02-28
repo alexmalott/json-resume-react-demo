@@ -10,11 +10,11 @@ function dateString(date) {
     return result;
 }
 
-function arrayToList(array){
+function arrayToList(array, preKey){
     let content = [];
 
     for (let i = 0; i < array.length; i++){
-        content.push( <li>{array[i]}</li> )
+        content.push( <li key={preKey + "-" + i}>{array[i]}</li> )
     }
 
     return (

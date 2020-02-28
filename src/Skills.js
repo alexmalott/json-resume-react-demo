@@ -1,11 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
 import {Badge, Progress} from "reactstrap"
+import Panel from "./Panel";
 
-class Skills extends Component {
-    constructor(props){
-        super(props);
-        this.skills = this.skills.bind(this);
-    }
+class Skills extends Panel {
+    icon = "fa-compass";
+    title = "Skills";
 
     skillBar(level) {
         let val;
@@ -34,11 +33,11 @@ class Skills extends Component {
         )
     }
 
-    labelArray(array){
+    labelArray(array, preKey){
         let content = [];
 
         for (let i = 0; i < array.length; i++){
-            content.push( <Badge className="mr-1" color="secondary">{array[i]}</Badge> )
+            content.push( <Badge className="mr-1" color="secondary" key={preKey + "-" + i}>{array[i]}</Badge> )
         }
 
         return (
@@ -46,47 +45,21 @@ class Skills extends Component {
         )
     }
 
-    skill(skill){
+    itemMethod(item, key){
         return(
-            <div className="card-body card-text">
+            <div className="card-body card-text" key={"Skl" + key}>
                 <h5 className="row">
                     <div className="col-md">
-                        {skill.name}
+                        {item.name}
                     </div>
                     <div className="col-md text-md-right text-muted">
-                        {skill.level}
+                        {item.level}
                     </div>
                 </h5>
-                {this.skillBar(skill.level)}
-                {this.labelArray(skill.keywords)}
+                {this.skillBar(item.level)}
+                {this.labelArray(item.keywords, "Skl" + key)}
             </div>
         )
-    }
-
-    skills(){
-        let content = [];
-
-        for (let i = 0; i < this.props.items.length; i++){
-            if( i > 0 ){
-                content.push( <hr/> )
-            }
-            content.push( this.skill( this.props.items[i] ) )
-        }
-
-        return (
-            content
-        )
-    }
-
-    render() {
-        return (
-            <div className="card">
-                <h3 className="card-header">
-                    <i className="fa fa-compass"/> Skills
-                </h3>
-                {this.skills()}
-            </div>
-        );
     }
 }
 

@@ -1,56 +1,29 @@
-import React, {Component} from "react";
+import React from "react";
 import {dateString, arrayToList} from "./Utilities"
+import Panel from "./Panel";
 
-class Work extends Component {
-    constructor(props){
-        super(props);
-        this.jobs = this.jobs.bind(this);
-    }
+class Work extends Panel {
+    icon = "fa-briefcase";
+    title = "Experience";
 
-    job(job){
+    itemMethod(item, key){
         return(
-            <div className="card-body card-text">
+            <div className="card-body card-text" key={"Job" + key}>
                 <h5 className="row">
                     <div className="col-md">
-                        {job.position}
+                        {item.position}
                     </div>
                     <div className="col-md text-md-center">
-                        <a className="float" href={job.website}>{job.company}</a>
+                        <a className="float" href={item.website}>{item.company}</a>
                     </div>
                     <div className="col-md text-md-right text-muted">
-                        ({dateString(job.startDate)} - {dateString(job.endDate)})
+                        ({dateString(item.startDate)} - {dateString(item.endDate)})
                     </div>
                 </h5>
-                {job.summary}
-                {arrayToList(job.highlights)}
+                {item.summary}
+                {arrayToList(item.highlights, "Job" + key)}
             </div>
         )
-    }
-
-    jobs(){
-        let content = [];
-
-        for (let i = 0; i < this.props.items.length; i++){
-            if( i > 0 ){
-                content.push( <hr/> )
-            }
-            content.push( this.job( this.props.items[i] ) )
-        }
-
-        return (
-            content
-        )
-    }
-
-    render() {
-        return (
-            <div className="card">
-                <h3 className="card-header">
-                    <i className="fa fa-briefcase"/> Experience
-                </h3>
-                {this.jobs()}
-            </div>
-        );
     }
 }
 
