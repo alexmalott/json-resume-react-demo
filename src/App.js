@@ -5,6 +5,8 @@ import Work from './Work'
 import Education from './Education'
 import Skills from './Skills'
 import Volunteer from './Volunteer'
+import Publications from "./Publications";
+import Awards from "./Awards";
 
 class App extends Component {
     componentDidMount(){
@@ -19,14 +21,25 @@ class App extends Component {
                     <div className="col-12 col-xl-6">
                         <Work items={Resume.work}/>
                     </div>
+                    <br/>
                     <div className="col-12 col-xl-6">
                         <Skills items={Resume.skills}/>
                     </div>
+                    <br/>
                     <div className="col-12 col-xl-6">
                         <Education items={Resume.education}/>
                     </div>
+                    <br/>
                     <div className="col-12 col-xl-6">
                         <Volunteer items={Resume.volunteer}/>
+                    </div>
+                    <br/>
+                    <div className="col-12 col-xl-6">
+                        <Publications items={Resume.publications}/>
+                    </div>
+                    <br/>
+                    <div className="col-12 col-xl-6">
+                        <Awards items={Resume.awards}/>
                     </div>
                 </div>
             </div>
