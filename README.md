@@ -3,7 +3,7 @@
 # json-resume-react-demo
 A barebones [JSON Resume](https://github.com/jsonresume) compliant react web app.
 
-There are some capabilities that exist outside the published schema: specifically `volunteering` and `awards` support the `website` field - although it's not mandatory.
+There are some capabilities that exist outside the published schema: specifically `awards` supports the `website` field - although it's not mandatory.
 
 ### Getting Started
 Run the following command to install dependencies:
