@@ -18,7 +18,7 @@ class Panel extends Component {
 
         for (let i = 0; i < this.props.items.length; i++){
             if( i > 0 ){
-                content.push( <hr/> )
+                content.push( <hr key={this.prefix + i + "hr"}/> )
             }
             content.push( this.itemMethod( this.props.items[i], this.prefix + i ) )
         }
