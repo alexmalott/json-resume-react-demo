@@ -13,7 +13,7 @@ class Basics extends Component {
     profileLinks(){
         let items = [];
         this.props.items.profiles.forEach(element =>
-            items.push(this.iconLink(element.network, element.url, "", "fa-" + element.network))
+            items.push(this.iconLink(element.network.charAt(0).toUpperCase() + element.network.slice(1), element.url, "", "fa-" + element.network))
         );
         return items;
     }
