@@ -1,5 +1,4 @@
 import React from "react";
-import {Badge, Progress} from "reactstrap"
 import Panel from "./Panel";
 
 class Skills extends Panel {
@@ -30,7 +29,9 @@ class Skills extends Panel {
             return
         }
         return(
-            <Progress value={val} color={color}/>
+            <div className="progress">
+                <div className={"progress-bar w-" + val + " bg-" + color}/>
+            </div>
         )
     }
 
@@ -38,7 +39,7 @@ class Skills extends Panel {
         let content = [];
 
         for (let i = 0; i < array.length; i++){
-            content.push( <Badge className="mr-1" color="secondary" key={preKey + "-" + i}>{array[i]}</Badge> )
+            content.push( <div className="badge badge-secondary mr-1" key={preKey + "-" + i}>{array[i]}</div> )
         }
 
         return (
