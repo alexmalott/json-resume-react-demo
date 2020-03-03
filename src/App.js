@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import Resume from './Resume'
 import Basics from './Basics'
 import Work from './Work'
@@ -9,13 +10,10 @@ import Publications from "./Publications";
 import Awards from "./Awards";
 
 class App extends Component {
-    componentDidMount(){
-        document.title = Resume.basics.name
-    }
-
     render() {
         return (
             <div>
+                <Helmet title={Resume.basics.name}/>
                 <Basics items={Resume.basics}/>
                 <div className="container">
                     <div className="col-12">

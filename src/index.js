@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import './scss/custom.scss';
 import 'font-awesome/css/font-awesome.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+render(<App />, document.getElementById('root'));
