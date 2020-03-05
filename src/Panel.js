@@ -29,14 +29,19 @@ class Panel extends Component {
     }
 
     render(){
-        return (
-            <div className="card">
-                <h3 className="card-header">
-                    <i className={"fa " + this.icon}/> {this.title}
-                </h3>
-                {this.populate()}
-            </div>
-        )
+        if(this.props.items) {
+            return (
+                <div className="card">
+                    <h3 className="card-header">
+                        <i className={"fa " + this.icon}/> {this.title}
+                    </h3>
+                    {this.populate()}
+                </div>
+            )
+        }
+        else{
+            return null;
+        }
     }
 }
 
