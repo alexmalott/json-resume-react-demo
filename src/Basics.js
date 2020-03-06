@@ -5,7 +5,7 @@ class Basics extends Component {
     {
         if(content && icon) {
             return(
-                    <a key={name} href={prefix + content} aria-label={name}><p className="d-none d-print-block">{name + ": " + content}<br/></p><i className={"d-print-none p-2 fa fa-2x " + icon}/></a>
+                    <a key={name} href={prefix + content} aria-label={name}><p className="d-none d-print-block">{name + ": " + content}</p><i className={"d-print-none p-2 fa fa-2x " + icon}/></a>
         )
         }
     }
@@ -23,7 +23,7 @@ class Basics extends Component {
             <div className="jumbotron">
                 <h1>{this.props.items.name}</h1>
                 <h3 className="text-muted">{this.props.items.location.city}, {this.props.items.location.region}</h3>
-                <hr/>
+                <hr style={{marginTop: "0.5em", marginBottom: "0.5em"}}/>
                 <div className="row">
                         <div className="col-md-4">
                         {this.iconLink("Website", this.props.items.website, "", "fa-globe")}
