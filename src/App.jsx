@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Resume from './Resume'
 import Basics from './Basics'
 import Work from './Work'
@@ -13,7 +13,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Helmet title={Resume.basics.name}/>
+                <Helmet>
+                    <title>{Resume.basics.name}</title>
+                </Helmet>
                 <Basics items={Resume.basics}/>
                 <div className="container">
                     <div className="col-12">

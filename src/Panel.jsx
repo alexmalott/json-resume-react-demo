@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
 class Panel extends Component {
-    icon = "fa-question-circle";
+    icon = "fa-solid fa-circle-question";
     title = "Panel";
     prefix = "Pan";
     constructor(props){
@@ -33,7 +33,7 @@ class Panel extends Component {
             return (
                 <div className="card">
                     <h3 className="card-header">
-                        <i className={"fa " + this.icon}/> {this.title}
+                        <i className={this.icon + " me-2"} aria-hidden="true"/> {this.title}
                     </h3>
                     {this.populate()}
                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Panel from "./Panel";
 
 class Skills extends Panel {
-    icon = "fa-compass";
+    icon = "fa-solid fa-compass";
     title = "Skills";
     prefix = "Skl";
 
@@ -39,7 +39,7 @@ class Skills extends Panel {
         let content = [];
 
         for (let i = 0; i < array.length; i++){
-            content.push( <div className="badge badge-secondary mr-1" key={preKey + "-" + i}>{array[i]}</div> )
+            content.push( <div className="badge text-bg-secondary me-1 mb-1" key={preKey + "-" + i}>{array[i]}</div> )
         }
 
         return (
@@ -54,7 +54,7 @@ class Skills extends Panel {
                     <div className="col-md">
                         {item.name}
                     </div>
-                    <div className="col-md text-md-right text-muted">
+                    <div className="col-md text-md-end text-muted">
                         {item.level}
                     </div>
                 </h5>

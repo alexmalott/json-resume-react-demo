@@ -1,7 +1,7 @@
 import Publications from "./Publications";
 
 class Awards extends Publications {
-    icon = "fa-trophy";
+    icon = "fa-solid fa-trophy";
     title = "Awards";
     prefix = "Awd";
 

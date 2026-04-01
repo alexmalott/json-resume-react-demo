@@ -3,7 +3,7 @@ import {dateString, arrayToList} from "./Utilities";
 import Panel from "./Panel";
 
 class Education extends Panel {
-    icon = "fa-graduation-cap";
+    icon = "fa-solid fa-graduation-cap";
     title = "Education";
     prefix = "Edu";
 
@@ -18,7 +18,7 @@ class Education extends Panel {
                     <div className="col-md text-md-center">
                         {item.studyType} of {item.area}
                     </div>
-                    <div className="col-md text-md-right text-muted">
+                    <div className="col-md text-md-end text-muted">
                         ({dateString(item.startDate)} - {dateString(item.endDate)})
                     </div>
                 </h5>

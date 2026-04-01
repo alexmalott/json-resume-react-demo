@@ -3,7 +3,7 @@ import {dateString} from "./Utilities";
 import Panel from "./Panel";
 
 class Publications extends Panel {
-    icon = "fa-book";
+    icon = "fa-solid fa-book";
     title = "Publications";
     prefix = "Pub";
 
@@ -18,7 +18,7 @@ class Publications extends Panel {
                     <a href={item.website} className="col-md text-md-center">
                         {item.name}
                     </a>
-                    <div className="col-md text-md-right text-muted">
+                    <div className="col-md text-md-end text-muted">
                         {dateString(item.releaseDate)}
                     </div>
                 </h5>

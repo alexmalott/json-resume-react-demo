@@ -1,7 +1,7 @@
 import Work from "./Work";
 
 class Volunteer extends Work {
-    icon = "fa-handshake-o";
+    icon = "fa-solid fa-handshake";
     title = "Volunteering";
     prefix = "Vol";
 

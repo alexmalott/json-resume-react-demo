@@ -3,7 +3,7 @@ import {dateString, arrayToList} from "./Utilities"
 import Panel from "./Panel";
 
 class Work extends Panel {
-    icon = "fa-briefcase";
+    icon = "fa-solid fa-briefcase";
     title = "Experience";
     prefix = "Job";
 
@@ -17,7 +17,7 @@ class Work extends Panel {
                     <div className="col-md text-md-center">
                         <a className="float" href={item.website}>{item.company}</a>
                     </div>
-                    <div className="col-md text-md-right text-muted">
+                    <div className="col-md text-md-end text-muted">
                         ({dateString(item.startDate)} - {dateString(item.endDate)})
                     </div>
                 </h5>
